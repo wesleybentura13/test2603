@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.scalesec</groupId>
-	<artifactId>java-vulnado</artifactId>
+	<artifactId>vulnerable-java-maven</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>vulnerable-java-maven</name>
 	<description>Demo project for Spring Boot</description>
