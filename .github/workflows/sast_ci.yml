@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cdefense/sast-scan
-      options: -v /__w/vulnerable-java-maven/vulnerable-java-maven/target:/app -e "WORKSPACE=/__w/vulnerable-java-maven/vulnerable-java-maven"
+      options: -v /__w/vulnerable-java-maven/vulnerable-java-maven/target:/app -e "WORKSPACE=/__w/vulnerable-java-maven/vulnerable-java-maven/target"
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -40,4 +40,4 @@ jobs:
       
       # Run SAST scan
     - name: SAST Scan
-      run: python3 /usr/local/src/scan --src /app --type java --app_name vulnerable-java-maven --api-key 75a81a24-adfc-4bfd-8b32-7562169a9759
+      run: python3 /usr/local/src/scan --src /__w/vulnerable-java-maven/vulnerable-java-maven/target --type java --app_name vulnerable-java-maven --api-key 75a81a24-adfc-4bfd-8b32-7562169a9759
