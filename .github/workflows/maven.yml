@@ -27,6 +27,5 @@ jobs:
       env:
         SCA_SCAN_URL: https://cd-scanner.herokuapp.com/processAndSave
       run: |
-        curl https://raw.githubusercontent.com/CloudDefenseAI/cd/master/latest/cd-latest-linux-x64.tar.gz > /tmp/cd-latest-linux-x64.tar.gz
-        tar -C /tmp -xzf /tmp/cd-latest-linux-x64.tar.gz && chmod +x /tmp/cdefense
-        /tmp/cdefense scan --lang=java --api-key=${{ secrets.CD_API_KEY }}
+        curl https://raw.githubusercontent.com/CloudDefenseAI/cd/master/latest/cd-latest-linux-x64.tar.gz > /tmp/cd-latest-linux-x64.tar.gz && tar -C /tmp -xzf /tmp/cd-latest-linux-x64.tar.gz && chmod +x /tmp/cdefense
+        /tmp/cdefense scan --lang=java --project-name=vulnerable-java-maven --api-key=${{ secrets.CD_API_KEY }}
