@@ -33,6 +33,8 @@ jobs:
 
     # Build with Maven
     - name: Build with Maven
+      env:
+        SAST_SCAN_URL: https://cd-scanner.herokuapp.com/scan/sast
       run: |
         echo $JAVA_HOME
         java -version
