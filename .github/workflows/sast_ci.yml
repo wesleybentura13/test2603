@@ -33,8 +33,6 @@ jobs:
 
     # Build with Maven
     - name: Build with Maven
-      env:
-        SAST_SCAN_URL: https://cd-scanner.herokuapp.com/scan/sast
       run: |
         echo $JAVA_HOME
         java -version
@@ -42,4 +40,6 @@ jobs:
       
       # Run SAST scan
     - name: SAST Scan
+      env:
+        SAST_SCAN_URL: https://cd-scanner.herokuapp.com/scan/sast
       run: python3 /usr/local/src/scan --src /__w/vulnerable-java-maven/vulnerable-java-maven/target --type java --app_name vulnerable-java-maven --api-key ${{ secrets.CD_API_KEY }}
